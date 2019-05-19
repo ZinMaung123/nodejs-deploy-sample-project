@@ -24,6 +24,16 @@ class DepartmentController {
             });
     }
 
+    create(req, res){
+        model.createDepartment(req.body.name)
+        .then(data => {
+            res.send("dapartment created");
+        })
+        .catch(err => {
+            res.send(err);
+        })
+    }
+
 }
 
 

@@ -15,6 +15,16 @@ class Department extends BaseModel {
             });
         })
     }
+
+    async createDepartment(name){
+        const create_query = `insert into departments set ?`;
+        return new Promise((resolve, reject)=>{
+            this.sql.query(create_query, {name}, (err, result)=>{
+                if(err) reject(err);
+                else resolve(result);
+            });
+        });        
+    }
 }
 
 module.exports = Department;

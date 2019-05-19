@@ -11,7 +11,7 @@ route.get('/', (req, res) => {
 });
 
 route.post('/', (req, res) => {
-    res.send("Create a department");
+    controller.create(req,res);
 });
 
 route.put('/:id', (req, res) => {
